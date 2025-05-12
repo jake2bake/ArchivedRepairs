@@ -13,3 +13,21 @@ export const getGenreById = (genreId) => {
 export const getBorrowedBooks = () => {
     return fetch("http://localhost:8088/borrowedBooks").then((res) => res.json())
 }
+
+export const addBook = (newBook) => {
+    return fetch("http://localhost:8088/books", {
+        method: "POST",
+        headers: {"Content-Type": "application/json",},
+        body: JSON.stringify(newBook)
+    })
+}
+
+export const updateBook = (book) => {
+    return fetch(`http://localhost:8088/books/${book.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(book)
+    })
+}
