@@ -31,3 +31,7 @@ export const updateBook = (book) => {
         body: JSON.stringify(book)
     })
 }
+
+export const deleteBook = (book) => {
+    return fetch(`http://localhost:8088/books/${book.id}`, { method: "DELETE" }) 
+}
