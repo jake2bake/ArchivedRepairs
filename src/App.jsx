@@ -1,5 +1,5 @@
 import "./App.css"
-
+import "bootstrap/dist/css/bootstrap.min.css"
 import { Routes, Route } from "react-router-dom"
 import { Authorized } from "./views/Authorized"
 import { Login } from "./components/auth/Login"

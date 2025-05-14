@@ -46,7 +46,7 @@ export const BookDetails = ({ currentUser }) => {
         })
     }, [])
     
-    const reviewsForThisBook = reviews.filter(review => review.bookId === thisBook.id)
+    const reviewsForThisBook = reviews.filter(review => review?.bookId === thisBook?.id)
     
     const isBorrowedByCurrentUser = borrowed.some(
         (borrowedBook) => borrowedBook.userId === currentUser.id && borrowedBook.bookId === parseInt(bookId)
@@ -90,12 +90,12 @@ export const BookDetails = ({ currentUser }) => {
             <p><strong>Description: </strong> {thisBook?.description}</p>
             <div><img className="book-cover" src={thisBook?.coverImgUrl} /></div>
             <div>
-                <strong className="book-review">Reviews: </strong>
+                <strong className="book-review"><h3>Reviews: </h3></strong>
                  {reviewsForThisBook.length > 0 ? (
                     <ul className="book-reviews">
                         {reviewsForThisBook.map((review) => (
                             <li key={review.id}>
-                                <strong>{review.title}</strong>
+                                <strong className="book-reviews-title">{review.title}</strong>
                                 <p>{review.comment}</p>
                             </li>
                         ))}
@@ -128,7 +128,7 @@ export const BookDetails = ({ currentUser }) => {
                 </div>
             )}
             <div className="book-actions">
-                <Link to={`/reviews/${bookId}/review`} className="btn-primary">
+                <Link to={`/books/${bookId}/review`} className="btn-primary">
                     Write a Review
                 </Link>
             </div>

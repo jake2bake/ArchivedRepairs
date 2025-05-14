@@ -44,4 +44,15 @@
     border: solid rgb(178, 178, 231) 5px;
     list-style: none;
     align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.book-review {
+    display: flex;
+    justify-content: center;
+}
+
+.book-reviews-title {
+    display: flex;
 }
