@@ -35,3 +35,19 @@ export const updateBook = (book) => {
 export const deleteBook = (book) => {
     return fetch(`http://localhost:8088/books/${book.id}`, { method: "DELETE" }) 
 }
+
+export const borrowBook = (borrowedBook) => {
+    return fetch("http://localhost:8088/borrowedBooks", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(borrowedBook),
+    }).then((res) => res.json())
+}
+
+export const returnBook = (borrowedBookId) => {
+    return fetch(`http://localhost:8088/borrowedBooks/${borrowedBookId}`, {
+        method: "DELETE",
+    })
+}

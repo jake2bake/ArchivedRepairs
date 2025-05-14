@@ -6,7 +6,7 @@ import "./Login.css"
 import { getUserByEmail } from "../../services/UserServices"
 
 export const Login = () => {
-  const [email, set] = useState("bob@example.com")
+  const [email, set] = useState("")
   const navigate = useNavigate()
 
   const handleLogin = (e) => {
@@ -20,6 +20,8 @@ export const Login = () => {
           JSON.stringify({
             id: user.id,
             isAdmin: user.isAdmin,
+            email: user.email,
+            username: user.username
           })
         )
 

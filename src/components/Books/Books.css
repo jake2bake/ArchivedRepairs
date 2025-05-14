@@ -39,3 +39,9 @@
 .btn-details:hover {
     background-color: #0056b3;
 }
+
+.book-reviews {
+    border: solid rgb(178, 178, 231) 5px;
+    list-style: none;
+    align-items: center;
+}
