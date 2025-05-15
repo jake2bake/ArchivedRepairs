@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useNavigate, useParams, Link } from "react-router-dom"
 import { deleteBook, getBookById, getBorrowedBooks, getGenreById, borrowBook, returnBook } from "../../services/BookServices"
 import "./Books.css"
-import { getReviews } from "../../services/ReviewServices"
+import { getThemReviews } from "../../services/ReviewServices"
 
 export const BookDetails = ({ currentUser }) => {
     const navigate = useNavigate()
@@ -41,7 +41,7 @@ export const BookDetails = ({ currentUser }) => {
     }
 
     useEffect(() => {
-        getReviews().then((reviews) => {
+        getThemReviews().then((reviews) => {
             setReviews(reviews)
         })
     }, [])
@@ -97,6 +97,11 @@ export const BookDetails = ({ currentUser }) => {
                             <li key={review.id}>
                                 <strong className="book-reviews-title">{review.title}</strong>
                                 <p>{review.comment}</p>
+                                <p>
+                                    <em>
+                                        - {review.user?.username || "Unknown user"}
+                                    </em>
+                                </p>
                             </li>
                         ))}
                     </ul>
