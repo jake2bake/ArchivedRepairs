@@ -6,6 +6,7 @@ export const AdminNav = () => {
     const navigate = useNavigate();
     return (
         <ul className="navbar">
+            
             <li className="navbar-item">
                 <Link to="/allbooks">All Books</Link>
             </li>

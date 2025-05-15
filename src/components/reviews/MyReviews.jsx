@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 import { getReviewsByUserId } from "../../services/ReviewServices"
+import { useNavigate } from "react-router-dom"
 
 export const MyReviews = ({currentUser}) => {
     const [theseReviews, setTheseReviews] = useState([])
-
+    const navigate = useNavigate()
     useEffect(() => {
         getReviewsByUserId(currentUser.id).then((reviewArray) => {
             setTheseReviews(reviewArray)
@@ -23,6 +24,8 @@ export const MyReviews = ({currentUser}) => {
                     <img src={review.book?.coverImgUrl}></img>
                     <h3><strong>{review?.title}</strong></h3>
                     <div>{review?.comment}</div>
+                    <button onClick={() => navigate(`/books/${review.bookId}/review/${review.id}/edit`)}>Edit Review</button>
+
                 </div>
             ))
         )}

@@ -8,6 +8,8 @@ import { BookForm } from "../components/Books/BookForm"
 import { UpdateBook } from "../components/Books/UpdateBook"
 import { UserProfile } from "../components/users/UserProfile"
 import { ReviewForm } from "../components/reviews/ReviewForm"
+import { MyReviews } from "../components/reviews/MyReviews"
+import { UsersList } from "../components/users/UsersList"
 
 
 export const AdminViews = ({ currentUser }) => {
@@ -25,7 +27,10 @@ export const AdminViews = ({ currentUser }) => {
     {/* <Route path="users" element={<UserProfile currentUser={currentUser} />} /> */}
     <Route path="profile" element={<UserProfile currentUser={currentUser}/>} />
     <Route path="users/:userId" element={<UserProfile  currentUser={currentUser}/>} />
+    <Route path="myreviews" element={<MyReviews currentUser={currentUser} />} />
     <Route path="books/:bookId/review" element={<ReviewForm currentUser={currentUser} />} />
+    <Route path="books/:bookId/review/:reviewId/edit" element={<ReviewForm currentUser={currentUser} />} />
+    <Route path="users" element={<UsersList currentUser={currentUser} />} />
     </Route>
         </Routes>
     )

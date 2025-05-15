@@ -29,6 +29,7 @@ export const UserViews = ({ currentUser }) => {
                     <Route path="users/:userId" element={<UserProfile  currentUser={currentUser}/>} />
                 <Route path="myreviews" element={<MyReviews currentUser={currentUser} />} />
                 <Route path="books/:bookId/review" element={<ReviewForm currentUser={currentUser} />} />
+                <Route path="books/:bookId/review/:reviewId/edit" element={<ReviewForm currentUser={currentUser} />} />
             </Route>
         </Routes>
     )

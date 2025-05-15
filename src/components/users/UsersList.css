@@ -1,0 +1,31 @@
+.users {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.user {
+    border: 1px solid #ccc;
+    padding: 16px;
+    border-radius: 8px;
+    width: 200px;
+}
+
+.user-pfp {
+    width: 100%; /* Make the image fit the width of the container */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+    margin-top: 8px;
+}
+
+.user-profile ul {
+    list-style: none;
+    padding-left: 0;
+    
+}
+
+.user-profile ul li {
+    border-bottom: 1px solid #ccc;
+    padding: 8px 0;
+}

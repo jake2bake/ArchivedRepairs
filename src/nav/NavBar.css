@@ -5,10 +5,11 @@
     margin: 0;
     width: 100%;
     padding: 0.5rem;
+    justify-content: space-evenly;
   }
 
   .navbar-item {
-    flex-basis: 20%;
+    flex: 1;
     list-style-type: none;
     text-align: center;
     color: var(--offWhite);
