@@ -29,3 +29,14 @@
     border-bottom: 1px solid #ccc;
     padding: 8px 0;
 }
+
+.btn-primary {
+    margin-top: 10px;
+}
+
+.profile-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1rem;
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { getReviewsByUserId } from "../../services/ReviewServices"
 import { useNavigate } from "react-router-dom"
+import "./Reviews.css"
 
 export const MyReviews = ({currentUser}) => {
     const [theseReviews, setTheseReviews] = useState([])

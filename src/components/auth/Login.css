@@ -1,5 +1,12 @@
 .container-login {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
   }
   
   .container-login > section > a {
@@ -8,8 +15,10 @@
   }
   
   .form-login {
-    width: 60%;
-    margin: 2rem auto;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
   
   .form-login > h1 {

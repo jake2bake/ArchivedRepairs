@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { getAllUsers } from "../../services/UserServices"
 import { User } from "./User"
 import "./UsersList.css"
+import { Link } from "react-router-dom"
 
 export const UsersList = () => {
     const [users, setUsers] = useState([])
@@ -18,8 +19,10 @@ export const UsersList = () => {
                 {users.map((userObj) => {
                     return (
                         <User key={userObj.id} user={userObj}/>
+                        
                     ) 
                 })}
+                
             </article>
         </div>
     )

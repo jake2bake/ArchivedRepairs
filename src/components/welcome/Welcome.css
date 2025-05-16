@@ -1,21 +1,48 @@
 .welcome-container {
-    margin: 2rem auto;
-    width: 60%;
-    text-align: center;
-    padding: 5rem 3rem;
-    border: 1px solid var(--outline);
-    background-color: white;
-    border-radius: 0.5rem;
-  }
-  
-  /* This targets any h1 that is a child of an element with the .welcome-container class */
-  .welcome-container > h1 {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    color: var(--primary);
-  }
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(60,60,120,0.08);
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 3rem 2rem;
+}
+  
+  /* This targets any h1 that is a child of an element with the .welcome-container class */
+  .welcome-container h1 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2.5rem;
+    color: #3b3b5c;
+    margin-bottom: 1rem;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.welcome-container h1 span:first-child {
+    display: block;
+    font-size: 1.2rem;
+    color: #6c63ff;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.welcome-container h1 span:last-child {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #3b3b5c;
+    letter-spacing: 3px;
+}
   
   /* This targets any div that is a child of an element with the .welcome-container class */
-  .welcome-container > div {
-    font-style: italic;
-  }
+.welcome-container > div {
+    font-size: 1.3rem;
+    color: #6c63ff;
+    margin-top: 1.5rem;
+    font-family: 'Quicksand', sans-serif;
+    letter-spacing: 1px;
+}

@@ -9,6 +9,7 @@ export const Register = (props) => {
     email: "",
     username: "",
     isAdmin: false,
+    pfp: ""
   })
 
   const registerNewUser = () => {
@@ -82,17 +83,31 @@ export const Register = (props) => {
         </fieldset>
         <fieldset>
           <div className="form-group">
+            <input 
+              onChange={updateCustomer}
+              type="text"
+              id="pfp"
+              className="form-control"
+              placeholder="Profile picture URL"
+              value={user.pfp}
+            />
+          </div>
+        </fieldset>
+        <fieldset>
+          <div className="form-group">
             <label>
               <input
+                type="checkbox"
+                id="isAdmin"
+                checked={user.isAdmin}
                 onChange={(evt) => {
                   const copy = { ...user }
                   copy.isAdmin = evt.target.checked // Fixed to update `isAdmin`
                   setUser(copy)
                 }}
-                type="checkbox"
-                id="isAdmin"
+                style={{ marginRight: "8px"}}
               />
-              I am an administrator{" "}
+               I am an administrator{" "}
             </label>
           </div>
         </fieldset>

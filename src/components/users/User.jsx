@@ -13,7 +13,9 @@ export const User = ({user}) => {
             <div>
                 <img className="user-pfp" src={user.pfp} />
             </div>
-            
+            <Link to={`/users/${user.id}`} className="btn btn-primary">
+                View Profile
+            </Link>
 
         </div>
     )
