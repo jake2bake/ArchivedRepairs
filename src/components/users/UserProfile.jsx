@@ -2,11 +2,14 @@ import { useEffect, useState } from "react"
 import { getUserById } from "../../services/UserServices"
 import "./UsersList.css"
 import { getBorrowedBooks, getAllBooks } from "../../services/BookServices"
+import { useNavigate } from "react-router-dom"
+import { deleteUser } from "../../services/UserServices"
 
 
 export const UserProfile = ({currentUser}) => {
     const [user, setUser] = useState({})
     const [borrowedTitles, setBorrowedTitles] = useState([])
+    const navigate = useNavigate()
     
     useEffect(() => {
         Promise.all([getAllBooks(), getBorrowedBooks()]).then(([books, borrowedBooks]) => {
@@ -52,6 +55,29 @@ export const UserProfile = ({currentUser}) => {
                     <p>No borrowed books.</p>
                 )}
             </div>
+            {user?.id === currentUser.id && (
+                <div className="profile-actions">
+                    <button 
+                        className="btn btn-primary"
+                        onClick={() => navigate(`/profile/edit`)}
+                    >
+                        Edit Profile
+                    </button>
+                    <button 
+                        className="btn btn-danger"
+                        onClick={() => {
+                            if (window.confirm("Are you sure you want to delete your profile?")) {
+                                deleteUser(user.id).then(() => {
+                                    localStorage.removeItem("reader_user")
+                                    navigate("/", {replace: true})
+                                })
+                            }
+                        }}
+                    >
+                        Delete Profile
+                    </button>
+                </div>
+            )}
         </section>
     )
 }

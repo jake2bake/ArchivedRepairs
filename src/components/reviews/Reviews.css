@@ -1,0 +1,7 @@
+.book-cover {
+    width: 120px;         /* Set your desired width */
+    height: 180px;        /* Set your desired height */
+    object-fit: cover;    /* Ensures the image fills the box and is cropped if needed */
+    border-radius: 8px;   /* Optional: rounded corners */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Optional: subtle shadow */
+}

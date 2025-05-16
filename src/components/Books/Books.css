@@ -13,11 +13,12 @@
 }
 
 .book-cover {
-    width: 100%; /* Make the image fit the width of the container */
-    height: auto; /* Maintain the aspect ratio */
+    width: 120px; /* Make the image fit the width of the container */
+    height: 180px; /* Maintain the aspect ratio */
     border-radius: 8px; /* Optional: Add rounded corners */
     object-fit: cover; /* Ensure the image covers the container without distortion */
     margin-top: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .book-info {
