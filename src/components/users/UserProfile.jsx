@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { getUserById } from "../../services/UserServices"
 import "./UsersList.css"
 import { getBorrowedBooks, getAllBooks } from "../../services/BookServices"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { deleteUser } from "../../services/UserServices"
 
 
@@ -10,32 +10,35 @@ export const UserProfile = ({currentUser}) => {
     const [user, setUser] = useState({})
     const [borrowedTitles, setBorrowedTitles] = useState([])
     const navigate = useNavigate()
+    const { userId } = useParams()
     
     useEffect(() => {
+        if (!user?.id) return
         Promise.all([getAllBooks(), getBorrowedBooks()]).then(([books, borrowedBooks]) => {
-            const userBorrowed = borrowedBooks.filter(b => b.userId === currentUser.id)
+            const userBorrowed = borrowedBooks.filter(b => b.userId === user.id)
             const titles = userBorrowed
             .map(b => books.find(book => book.id === b.bookId))
             .filter(Boolean)
             .map(book => book.title)
             setBorrowedTitles(titles)
         })
-    }, [currentUser])
+    }, [user])
     
    
 
     useEffect(() => {
-        if (currentUser.id) {
-            getUserById(currentUser.id).then((data) => {setUser(data)})
-        }
+        if (userId) {
+            getUserById(userId).then(setUser)
+        } else {
         
             setUser(currentUser)
+        }
         
- }, [ currentUser])
-
+ }, [userId, currentUser])
+console.log(user)
     return (
         <section className="user-profile">
-            <header className="user-header">{user?.username || "User Profile"}</header>
+            <header className="user-header"><em>{user?.username || "User Profile"}</em></header>
             <div>
                 <span className="email">Email: </span>
                 {user?.email || "No email available"}

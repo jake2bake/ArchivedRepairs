@@ -1,4 +1,8 @@
-.container-login {
+/* .container-login {
+    background-image: url('https://cdn.tourcms.com/a/11676/5995/1/large.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -7,8 +11,27 @@
     min-height: 100vh;
     width: 100vw;
     box-sizing: border-box;
+  } */
+
+  body {
+    background-image: url('https://cdn.tourcms.com/a/11676/5995/1/large.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+
   }
   
+  .container-login {
+    background-color: blanchedalmond;
+    border-radius: 15px;
+    text-align: center;
+    justify-content: center;
+
+  }
   .container-login > section > a {
     text-decoration: underline;
     color: var(--secondary);
@@ -17,13 +40,14 @@
   .form-login {
     width: 100%;
     max-width: 400px;
-    margin: 0 auto;
+    margin: auto;
     box-sizing: border-box;
   }
   
   .form-login > h1 {
     font-size: 2.5rem;
     text-align: center;
+    padding-right: 10px;
   }
   
   .form-login > h2 {

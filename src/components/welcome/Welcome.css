@@ -4,13 +4,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+    background: rgba(255, 255, 255, 0.85);
     border-radius: 16px;
-    box-shadow: 0 4px 24px rgba(60,60,120,0.08);
+    box-shadow: 0 8px 32px rgba(60,60,120,0.18);
     margin: 0 auto;
     max-width: 600px;
     padding: 3rem 2rem;
+    z-index: 10;
+    position: relative;
+    clip-path: ellipse(50% 40% at 50% 50%)
+    
 }
+
+
   
   /* This targets any h1 that is a child of an element with the .welcome-container class */
   .welcome-container h1 {
@@ -45,4 +51,17 @@
     margin-top: 1.5rem;
     font-family: 'Quicksand', sans-serif;
     letter-spacing: 1px;
+}
+
+.welcome-background {
+    background-image: url('https://assets.designtemplate.io/images/Interstellar%20Nebula%20Display%20Overlay%20for%20Sci-Fi%20Logo%20Animation-HD.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
 }
