@@ -3,14 +3,16 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 64px;
-    background-color: var(--dark);
+    height: 60px;
+    background: linear-gradient(90deg, #06beb6 0%, #48b1f3 100%); /* Vibrant gradient */
     display: flex;
-    justify-content: center; /* Center all items as a group */
+    justify-content: center;
     align-items: center;
     z-index: 1000;
     box-sizing: border-box;
     padding: 0 1rem;
+    border-bottom: 4px solid #ffb347; /* Contrasting accent */
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12); /* Subtle shadow */
 }
 
   .navbar-item {
@@ -43,5 +45,5 @@
   }
 
   main {
-    margin-top: 64px;
+    margin-top: 72px;
   }

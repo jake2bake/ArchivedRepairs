@@ -21,7 +21,8 @@ export const Login = () => {
             id: user.id,
             isAdmin: user.isAdmin,
             email: user.email,
-            username: user.username
+            username: user.username,
+            pfp: user.pfp
           })
         )
 

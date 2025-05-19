@@ -20,6 +20,7 @@ export const AdminViews = ({ currentUser }) => {
             <main>
                 <Routes>
                     <Route path="/" element={<Outlet />}>
+                        
                         <Route index element={<Welcome />} />
                         <Route path="allbooks" classname="navbar-item" element={<AllBooks currentUser={currentUser} />} />
                         <Route path="mybooks" classname="navbar-item" element={<MyBooks currentUser={currentUser} key={window.location.pathname + window.location.search} />} />
