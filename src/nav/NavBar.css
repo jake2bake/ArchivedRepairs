@@ -4,46 +4,91 @@
     left: 0;
     width: 100%;
     height: 60px;
-    background: linear-gradient(90deg, #06beb6 0%, #48b1f3 100%); /* Vibrant gradient */
+    background: linear-gradient(90deg, #3e2723 0%, #795548 100%); /* Vibrant gradient */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
     box-sizing: border-box;
     padding: 0 1rem;
-    border-bottom: 4px solid #ffb347; /* Contrasting accent */
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12); /* Subtle shadow */
+    border-bottom: 4px solid #ffd180; /* Contrasting accent */
+    
+    backdrop-filter: blur(4px);
+    box-shadow: 0 6px 24px rgba(60, 60, 120, 0.13);
+  }
+
+  .navbar-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-  .navbar-item {
+.navbar-item {
     flex: 0 0 auto;
     list-style-type: none;
     text-align: center;
-    color: var(--offWhite);
+    color: #ffe0b2;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    margin: auto;
-    
-   
-    
-  }
+    justify-content: center;
+    margin: 0 18px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
 
   .navbar-link {
     text-decoration: none;
+    color: #ffe0b2;
     font-family: "Quicksand", sans-serif;
     letter-spacing: 1px;
-  }
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 700;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
 
   /* .navbar-logout {
     margin-left: auto;
   } */
 
   .navbar-link:hover {
-    color: var(--primary);
-  }
+    color: #ffd180;
+    background: rgba(255,255,255,0.08);
+    box-shadow: 0 2px 8px #ffb34733;
+}
 
   main {
     margin-top: 72px;
   }
+
+  @media (max-width: 700px) {
+  .navbar {
+    height: auto;
+    overflow-x: auto;
+    padding: 0.5rem 0.2rem;
+  }
+  .navbar-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: 100vw;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0;
+  }
+  .navbar-item {
+    margin: 0 8px;
+    font-size: 1rem;
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+}

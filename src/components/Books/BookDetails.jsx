@@ -84,7 +84,7 @@ export const BookDetails = ({ currentUser }) => {
     }
 
     return (
-        <div className="book-details">
+        <div className="book">
             <h2>{thisBook?.title}</h2>
             <p><strong>Genre: </strong> {genre || "Unknown"}</p>
             <p><strong>Description: </strong> {thisBook?.description}</p>
