@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { addReview } from "../../services/ReviewServices"
 import { getReviewById } from "../../services/ReviewServices"
+import "./ReviewForm.css"
 
 export const ReviewForm = ({currentUser}) => {
     const navigate = useNavigate()
@@ -36,8 +37,10 @@ export const ReviewForm = ({currentUser}) => {
 
 
     return (
-        <form>
+        <div className="review-form-container">
+        
             <h2>Write A Review</h2>
+            <form>
             <fieldset>
                 <div className="form-group">
                     <label>Title: </label>
@@ -77,5 +80,6 @@ export const ReviewForm = ({currentUser}) => {
 
             </fieldset>
         </form>
+        </div>
     )
 }

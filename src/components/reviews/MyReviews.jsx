@@ -22,7 +22,7 @@ export const MyReviews = ({currentUser}) => {
             theseReviews.map((review) => (
                 <div className="review-info" key={review.id}>
                     <div>Book: <h2><strong>{review.book?.title}</strong></h2></div>
-                    <img src={review.book?.coverImgUrl}></img>
+                    <img className="book-cover" src={review.book?.coverImgUrl}></img>
                     <h3><strong>{review?.title}</strong></h3>
                     <div>{review?.comment}</div>
                     <button onClick={() => navigate(`/books/${review.bookId}/review/${review.id}/edit`)}>Edit Review</button>

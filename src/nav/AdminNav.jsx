@@ -5,7 +5,8 @@ import "./NavBar.css";
 export const AdminNav = () => {
     const navigate = useNavigate();
     return (
-        <ul className="navbar">
+        <nav className="navbar">
+        <ul className="navbar-list">
             
             <li className="navbar-item">
                 <Link to="/allbooks">All Books</Link>
@@ -39,5 +40,6 @@ export const AdminNav = () => {
                 ""
             )}
         </ul>
+        </nav>
     );
 };
